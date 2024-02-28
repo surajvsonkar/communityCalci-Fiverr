@@ -18,7 +18,7 @@ const followersInput = document.getElementById('followers');
                 errorMessage.textContent = '';
             }
 
-            const result = followers * audience;
+            const result = followers * (audience/100);
             resultDiv.textContent = `Result: $${result * pricing}`;
         }
 
