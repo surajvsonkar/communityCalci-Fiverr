@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Community Calculator</title>
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+    <div class="calculator">
+        <label for="followers">Amount of Followers:</label>
+        <input type="text" id="followers" value="1000">
+        <div class="error-message" id="followerErrorMessage"></div>
+
+        <label for="audience">Audience to Community Conversion:</label>
+        <input type="range" id="audience" min="0" max="0.5" step="0.01" value="0.25">
+        <div class="range-label">
+            <span>0</span>
+            <span>0.5</span>
+        </div>
+        <div class="graph">
+            <div class="graph-value" id="audienceValue">0.25</div>
+        </div>
+
+        <label for="pricing">Membership Pricing:</label>
+        <input type="range" id="pricing" min="0" max="300" step="1" value="150">
+        <div class="range-label">
+            <span>$0</span>
+            <span>$300</span>
+        </div>
+        <div class="graph">
+            <div class="graph-value" id="pricingValue">$150</div>
+        </div>
+
+        <div id="result">Result: </div>
+
+        <div class="follow-button">
+            <button><a href="https://www.instagram.com/emilionils/" target="_blank">
+                    Follow me on Instagram
+                </a></button>
+        </div>
+    </div>
+    <script src="./index.js"></script>
+</body>
+
+</html>
