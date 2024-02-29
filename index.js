@@ -8,7 +8,7 @@ const errorMessage = document.getElementById('followerErrorMessage');
 const payingMembersText = document.getElementById('payingMembers');
 
 function calculate() {
-	const followers = parseInt(followersInput.value);
+	const followers = parseInt(followersInput.value.replace(/,/g, ''));
 	const audience = parseFloat(audienceInput.value);
 	const pricing = parseFloat(pricingInput.value);
 
@@ -23,14 +23,27 @@ function calculate() {
 	payingMembersText.textContent = `Paying Members: ${payingMembers}`;
 
 	const result = payingMembers * pricing;
-	resultDiv.innerHTML = `<p>Result: $${result.toFixed(2)}</p>`;
+	resultDiv.innerHTML = `<p>Result: $${formatNumberWithCommas(result)}</p>`;
 }
 
 function updateGraphValue(input, valueElement) {
 	valueElement.textContent = input.value;
 }
 
-followersInput.addEventListener('input', calculate);
+function formatNumberWithCommas(number) {
+	return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+}
+
+function formatFollowers(input) {
+	input.value = input.value
+		.replace(/\D/g, '')
+		.replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+	calculate();
+}
+
+followersInput.addEventListener('input', () => {
+	formatFollowers(followersInput);
+});
 audienceInput.addEventListener('input', () => {
 	calculate();
 	updateGraphValue(audienceInput, audienceValue);
