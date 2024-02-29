@@ -2,46 +2,75 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Community Calculator</title>
-    <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="./styles.css" />
 </head>
+
 <body>
     <div class="calculator">
-        <label for="followers">Amount of Followers:</label>
-        <input type="text" id="followers" value="1000">
-        <div class="error-message" id="followerErrorMessage"></div>
+        <div style="
+          border: 1px solid black;
+          width: 100%;
+          background-color: #f0f0f0;
+          border-style: none;
+          border-radius: 4px;
+          padding: 4px;
+        ">
+            <label for="followers">Amount of Followers  </label>
+            <input type="text" id="followers" value="1000" />
+            <div class="error-message" id="followerErrorMessage"></div>
+        </div>
 
-        <label for="audience">Audience to Community Conversion:</label>
-        <input type="range" id="audience" min="0" max="0.5" step="0.01" value="0.25">
-        <div class="range-label">
-            <span>0</span>
-            <span>0.5</span>
+        <div class="bg-1">
+            <label for="audience">Audience to Community Conversion</label>
+            <input type="range" id="audience" min="0.01" max="0.30" step="0.01" value="0.15" />
+            <div class="range-label">
+                <span>0.01</span>
+                <span>0.30</span>
+            </div>
         </div>
         <div class="graph">
-            <div class="graph-value" id="audienceValue">0.25</div>
-        </div>
+        <div class="graph-value" id="audienceValue">0.25</div>
+      </div>
 
-        <label for="pricing">Membership Pricing:</label>
-        <input type="range" id="pricing" min="0" max="300" step="1" value="150">
-        <div class="range-label">
-            <span>$0</span>
-            <span>$300</span>
+        <div class="bg-1">
+            <label for="pricing">Membership Pricing</label>
+            <input type="range" id="pricing" min="0" max="300" step="1" value="150" />
+            <div class="range-label">
+                <span>$0</span>
+                <span>$300</span>
+            </div>
         </div>
         <div class="graph">
-            <div class="graph-value" id="pricingValue">$150</div>
+        <div class="graph-value" id="pricingValue">$150</div>
+      </div>
+
+        <!-- Paying Members Section -->
+        <div class="paying-members bg-2"
+        ">
+            <span>🧑‍🤝‍🧑</span>
+            <p id="payingMembers" style="font-size: 22px">Paying Members: 3</p>
         </div>
 
-        <div id="result">Result: </div>
-
-        <div class="follow-button">
-            <button><a href="https://www.instagram.com/emilionils/" target="_blank">
-                    Follow me on Instagram
-                </a></button>
+        <div class="final-box bg-2"
+        ">
+            <span>💵</span>  
+            <div id="result" style="margin-top: 5px;font-size: 22px;font-weight: bold;color: green;">
+                Result: $472.5
+            </div>
         </div>
     </div>
-    <script src="./index.js"></script>
+    <div class="follow-button">
+        <button>
+            <a href="https://www.instagram.com/emilionils/" target="_blank">
+                Follow me on Instagram
+            </a>
+        </button>
+    </div>
+    <script src="./index.js">
+    </script>
 </body>
 
 </html>
