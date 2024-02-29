@@ -20,10 +20,14 @@ function calculate() {
 	}
 
 	const payingMembers = Math.round(followers * audience);
-	payingMembersText.textContent = `Paying Members: ${payingMembers}`;
+	payingMembersText.textContent = `Paying Members: ${formatNumberWithCommas(
+		payingMembers
+	)}`;
 
 	const result = payingMembers * pricing;
-	resultDiv.innerHTML = `<p>Result: $${formatNumberWithCommas(result)}</p>`;
+	resultDiv.innerHTML = `<p>Result: $${formatNumberWithCommas(
+		result.toFixed(0)
+	)}</p>`;
 }
 
 function updateGraphValue(input, valueElement) {
