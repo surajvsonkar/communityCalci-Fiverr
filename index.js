@@ -23,7 +23,7 @@ function calculate() {
 	payingMembersText.textContent = `Paying Members: ${payingMembers}`;
 
 	const result = payingMembers * pricing;
-	resultDiv.textContent = `Result: $${result.toFixed(2)}`;
+	resultDiv.innerHTML = `<p>Result: $${result.toFixed(2)}</p>`;
 }
 
 function updateGraphValue(input, valueElement) {
